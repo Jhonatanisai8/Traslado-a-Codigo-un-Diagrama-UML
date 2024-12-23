@@ -107,4 +107,24 @@ public class Estudiante {
         this.cursos = cursos;
     }
 
+    // metodos
+    public void inscribirCurso(String curso) {
+        this.cursos.stream()
+                .filter(c -> this.cursos.contains(curso))
+                .findAny()
+                .ifPresentOrElse(t -> {
+                    cursos.add(curso);
+                    System.out.println("Inscripcion exitosa....");
+                }, () -> System.out.println("Ya esta incrito en el curso " + curso));
+    }
+
+    public void abandonarCurso(String curso) {
+        this.cursos.stream()
+                .filter(c -> this.cursos.contains(curso))
+                .findAny()
+                .ifPresentOrElse(t -> {
+                    cursos.remove(curso);
+                    System.out.println("Abandonacion exitosa....");
+                }, () -> System.out.println("El curso " + curso + "no se encuentra."));
+    }
 }
