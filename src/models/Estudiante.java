@@ -1,7 +1,7 @@
 package models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Estudiante {
@@ -10,7 +10,7 @@ public class Estudiante {
     private int idEstudiante;
     private String nombre;
     private String apellido;
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
     private String genero;
     private String direccion;
     private String telefono;
@@ -22,7 +22,7 @@ public class Estudiante {
 
     }
 
-    public Estudiante(int idEstudiante, String nombre, String apellido, Date fechaNacimiento, String genero,
+    public Estudiante(int idEstudiante, String nombre, String apellido, LocalDate fechaNacimiento, String genero,
             String direccion, String telefono, String email) {
         this.idEstudiante = idEstudiante;
         this.nombre = nombre;
@@ -59,11 +59,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
