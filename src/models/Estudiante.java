@@ -127,4 +127,10 @@ public class Estudiante {
                     System.out.println("Abandonacion exitosa....");
                 }, () -> System.out.println("El curso " + curso + "no se encuentra."));
     }
+
+    // metodo para obtener la edad
+    public int obtenerEdad() {
+        return LocalDate.now().getYear() - fechaNacimiento.getYear();
+    }
+
 }
