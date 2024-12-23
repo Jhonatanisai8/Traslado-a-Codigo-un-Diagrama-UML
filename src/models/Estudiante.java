@@ -7,7 +7,7 @@ import java.util.List;
 public class Estudiante {
 
     // atributos
-    private int idEstudiante;
+    static private int idEstudiante;
     private String nombre;
     private String apellido;
     private LocalDate fechaNacimiento;
@@ -22,9 +22,9 @@ public class Estudiante {
 
     }
 
-    public Estudiante(int idEstudiante, String nombre, String apellido, LocalDate fechaNacimiento, String genero,
+    public Estudiante(String nombre, String apellido, LocalDate fechaNacimiento, String genero,
             String direccion, String telefono, String email) {
-        this.idEstudiante = idEstudiante;
+        idEstudiante++;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
@@ -131,6 +131,13 @@ public class Estudiante {
     // metodo para obtener la edad
     public int obtenerEdad() {
         return LocalDate.now().getYear() - fechaNacimiento.getYear();
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento
+                + ", genero=" + genero + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email
+                + "]";
     }
 
 }
